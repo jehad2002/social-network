@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS Event (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Title VARCHAR(100),
+    Description TEXT,
+    UserId INTEGER,
+    GroupId INTEGER,
+    Date DATE
+);

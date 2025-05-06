@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS Action (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Status INTEGER,
+    UserId INTEGER,
+    PostId INTEGER,
+    CommentId INTEGER,
+    FOREIGN KEY (UserId) REFERENCES User(Id),
+    FOREIGN KEY (PostId) REFERENCES Post(Id),
+    FOREIGN KEY (CommentId) REFERENCES Comment(Id)
+);

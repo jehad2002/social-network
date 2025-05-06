@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS Follow (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Follower INTEGER,
+    Following INTEGER,
+    Type INTEGER
+);

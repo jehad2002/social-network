@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS PostVisibility (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    PostId INTEGER,
+    Visibility INTEGER,
+    FOREIGN KEY (PostId) REFERENCES Post(Id),
+    FOREIGN KEY (Visibility) REFERENCES User(Id)
+);

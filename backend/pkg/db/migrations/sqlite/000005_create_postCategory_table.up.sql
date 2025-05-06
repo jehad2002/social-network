@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS PostCategory (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    PostId INTEGER,
+    CategoryId INTEGER,
+    FOREIGN KEY (PostId) REFERENCES Post(Id),
+    FOREIGN KEY (CategoryId) REFERENCES Category(Id)
+);

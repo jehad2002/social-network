@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS Comment (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Content TEXT,
+    ImagePath VARCHAR(100),
+    Date DATETIME,
+    PostId INTEGER,
+    UserId INTEGER,
+    FOREIGN KEY (PostId) REFERENCES Post(Id),
+    FOREIGN KEY (UserId) REFERENCES User(Id)
+);

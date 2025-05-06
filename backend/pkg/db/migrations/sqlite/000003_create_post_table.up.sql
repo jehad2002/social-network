@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS Post (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Content TEXT,
+    ImagePath VARCHAR(100),
+    Date DATETIME,
+    UserId INTEGER,
+    VisibilityPost VARCHAR(50),
+    FOREIGN KEY (UserId) REFERENCES User(Id)
+);
