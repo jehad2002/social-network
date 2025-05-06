@@ -1,0 +1,442 @@
+/* Tailwind base setup */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Global Styles */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Body styling */
+body {
+  background-color: #f0f2f5; /* خلفية مشابهة لتصميم فيسبوك */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #050505; /* لون النص الرئيسي */
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Color */
+.fortestColor {
+  background-color: rgb(91, 99, 126);
+}
+
+/* Wrapper styling */
+.wrapper {
+  position: relative;
+}
+
+/* Left Div */
+.left-div {
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 35%;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 55px;
+  border-radius: 10px;
+  margin-left: 2%;
+  z-index: 3;
+  border-right: 1px solid #e0e6ed; /* رمادي فاتح شبيه بفيسبوك */
+}
+
+.left-div .people {
+  margin-left: -1px;
+  width: calc(100% + 2px);
+  list-style-type: none;
+}
+
+.left-div .people .person {
+  position: relative;
+  width: 100%;
+  padding: 12px 10% 28px;
+  cursor: pointer;
+}
+
+.left-div .people .person:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  width: 80%;
+  height: 1px;
+  content: '';
+  background-color: #e0e6ed;
+  transform: translate(-20%, 0);
+}
+
+.left-div .people .person img {
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.left-div .people .person .name {
+  font-size: 14px;
+  line-height: 22px;
+  color: #050505;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.left-div .people .person .time {
+  font-size: 14px;
+  position: absolute;
+  top: 16px;
+  right: 10%;
+  padding: 0 0 5px 5px;
+  color: #606770;
+  background-color: white;
+}
+
+.left-div .people .person .preview {
+  font-size: 14px;
+  display: flex;
+  overflow: hidden !important;
+  width: 70%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #606770;
+}
+
+.left-div .people .person.active, 
+.left-div .people .person:hover {
+  margin-top: -1px;
+  margin-left: -1px;
+  padding-top: 13px;
+  border: 0;
+  background-color: #1877f2; /* أزرق مشابه لفيسبوك */
+  width: calc(100% + 2px);
+  padding-left: calc(10% + 1px);
+}
+
+.left-div .people .person.active span {
+  color: white;
+  background: transparent;
+}
+
+.left-div .people .person.active .name:hover {
+  text-decoration: underline;
+}
+
+.left-div .people .person.active:after {
+  display: none;
+}
+
+/* Right Div */
+.right-div {
+  position: relative;
+  float: right;
+  width: 59%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-right: 2%;
+  padding-top: 90px;
+}
+
+.right-div .top {
+  margin-top: -38.7px;
+  position: fixed;
+  z-index: 3;
+  width: 62.7%;
+  padding: 15px 29px;
+  background-color: #2d3748;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -14.8px;
+}
+
+.right-div .top span {
+  font-size: 15px;
+  color: #fff;
+}
+
+.right-div .top span .name {
+  color: #050505;
+}
+
+/* Chatbox */
+.right-div .chat {
+  position: relative;
+  overflow: auto;
+  padding: 120px 35px 92px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.right-div .chat .message {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-div .chat .message.right {
+  align-self: flex-end;
+  margin-right: -20px;
+}
+
+.right-div .chat .message.left {
+  align-self: flex-start;
+  margin-left: -20px;
+}
+
+.right-div .chat .message .message-block {
+  display: flex;
+  align-items: center;
+}
+
+.right-div .chat .message .sender-photo {
+  width: 30px;
+  height: 30px;
+  margin-right: 6px;
+  margin-top: 13px;
+  border-radius: 50%;
+}
+
+/* Write message box */
+.right-div .write {
+  position: fixed;
+  bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: auto;
+  padding-left: 8px;
+  border: 1px solid #e0e6ed;
+  background-color: #2d3748;
+  width: 60%;
+  border-radius: 5px;
+}
+
+.right-div .write input {
+  font-size: 16px;
+  width: 80%;
+  height: 40px;
+  padding: 0 10px;
+  color: #050505;
+  border: 0;
+  outline: none;
+  background: none;
+}
+
+.right-div .write img {
+  width: 28px;
+  height: 28px;
+}
+
+.right-div .write .send {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.right-div .write .attach, 
+.right-div .write .smiley {
+  cursor: pointer;
+}
+
+/* Message Bubble */
+.bubble {
+  font-size: 16px;
+  position: relative;
+  display: inline-block;
+  clear: both;
+  padding: 13px 14px;
+  vertical-align: top;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.bubble:before {
+  position: absolute;
+  top: 19px;
+  display: block;
+  width: 8px;
+  height: 6px;
+  content: '\00a0';
+  transform: rotate(29deg) skew(-35deg);
+}
+
+.bubble.you {
+  float: left;
+  color: white;
+  background-color: #00b0ff;
+  align-self: flex-start;
+  animation-name: slideFromLeft;
+}
+
+.bubble.you:before {
+  left: -3px;
+  background-color: #00b0ff;
+}
+
+.bubble.me {
+  float: right;
+  color: #050505;
+  background-color: #fff;
+  align-self: flex-end;
+  animation-name: slideFromRight;
+}
+
+.bubble.me:before {
+  right: -3px;
+  background-color: #fff;
+}
+
+/* Typing indicator */
+.typing {
+  background-color: #e6e7ec;
+  width: 50px;
+  display: block;
+  border-radius: 50%;
+  position: fixed;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.typing-bubbles {
+  text-align: center;
+}
+
+.dot {
+  display: inline-block;
+  background-color: #b6b5ba;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  margin-right: 5px;
+  animation: bob 2s infinite;
+}
+
+.dot:nth-child(1) {
+  animation-delay: -1s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.85s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: -0.7s;
+  margin-right: 0;
+}
+.name,.your-date {
+  font-size: 12px;
+}
+
+        /* Global theme variables */
+        /* :root[data-theme='light'] {
+          --text-color: #333;
+          --bg-color: #fff;
+          --bg-dives: #fff;
+          --vs-bg-color: #333;
+          --vs-color: #fff;
+          --filter: invert(1);
+        }
+
+        :root[data-theme='dark'] {
+          --text-color: #fff;
+          --bg-color: #000;
+          --bg-dives: #333;
+          --vs-bg-color: #fff;
+          --vs-color: #333;
+          --filter: invert(0);
+        }
+
+        .send {
+          filter: var(--filter) !important;
+          transition: filter 0.3s ease;
+        }
+        p,a:not(.Link_createGroup), span {
+          color: var(--text-color) !important;
+          transition: color 0.3s ease;
+        }
+        button:not(.outBtn) {
+          color: var(--text-color) !important;
+          transition: color 0.3s ease;
+        }
+        .EditProfile {
+          color: var(--vs-color) !important;
+          transition: color 0.3s ease;
+          background-color: var(--vs-bg-color) !important;
+          transition: background-color 0.3s ease;
+        }
+        h1,h2,h3,h4,h5,h6 {
+          color: var(--text-color) !important;
+          transition: color 0.3s ease;
+        }
+        div:not(.container div, .GroupButton__st, .screen_container) {
+          background-color: var(--bg-color) !important;
+          transition: background-color 0.3s ease;
+        }
+        .container {
+          background-color: var(--bg-dives) !important;
+          transition: background-color 0.3s ease;
+        }
+        .Container_OF_contant {
+          background-color: var(--bg-color);
+          transition: background-color 0.3s ease;
+          color: var(--text-color);
+        }
+        input , textarea {
+          color: var(--text-color) !important;
+          transition: color 0.3s ease;
+        }
+        body {
+          background-color: var(--bg-color) !important;
+          transition: background-color 0.3s ease;
+        } */
+
+
+@keyframes bob {
+  10% {
+    transform: translateY(-10px);
+    background-color: #9e9da2;
+  }
+  50% {
+    transform: translateY(0);
+    background-color: #b6b5ba;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .time {
+    display: none;
+  }
+
+  .right-div .top {
+    margin-left: -5px;
+    margin-top: -55px;
+  }
+
+  .right-div .write {
+    bottom: 55px;
+    z-index: 10;
+  }
+}

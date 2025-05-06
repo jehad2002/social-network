@@ -1,0 +1,235 @@
+/* Left side (Friend list) */
+.left-div {
+    position: fixed;
+    background-color: #fff;
+    width: 35%;
+    height: 100%;
+    padding: 0 15px;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.top {
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.people {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.person {
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.person:hover {
+    background-color: #f1f1f1;
+}
+
+.user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.name {
+    font-size: 16px;
+    color: #333;
+}
+
+.time {
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    color: #aaa;
+}
+
+.preview {
+    font-size: 14px;
+    color: #666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* Right side (Chat box) */
+.right-div {
+    position: fixed;
+    right: 0;
+    width: 65%;
+    height: 100%;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.top {
+    position: fixed;
+    top: 0;
+    width: 65%;
+    background-color: #eceff1;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.top .span {
+    font-size: 16px;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.chat {
+    margin-top: 80px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    height: calc(100% - 100px);
+}
+
+.write {
+    position: fixed;
+    bottom: 20px;
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+#message {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+#send {
+    background-color: #0078FF;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#send:hover {
+    background-color: #0066cc;
+}
+
+.bubble {
+    position: relative;
+    display: inline-block;
+    clear: both;
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 75%;
+    font-size: 14px;
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.bubble.you {
+    background-color: #0078FF;
+    color: #fff;
+    align-self: flex-start;
+    border-radius: 15px 15px 5px 15px;
+}
+
+.bubble.me {
+    background-color: #f1f1f1;
+    color: #333;
+    align-self: flex-end;
+    border-radius: 15px 15px 15px 5px;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.typing {
+    position: fixed;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.typing-bubbles {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.dot {
+    display: inline-block;
+    background-color: #B6B5BA;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    animation: bob 1s infinite;
+}
+
+.dot:nth-child(1) {
+    animation-delay: -0.2s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: -0.1s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0s;
+}
+
+@keyframes bob {
+    50% {
+        transform: translateY(-10px);
+        background-color: #0078FF;
+    }
+    100% {
+        transform: translateY(0);
+        background-color: #B6B5BA;
+    }
+}

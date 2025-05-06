@@ -1,0 +1,14 @@
+.actionBnt {
+    margin-top: -.4rem;
+    margin-left: auto;
+}
+
+.bntBehave:hover {
+    cursor: pointer;
+    transition-duration: .4s;
+    background-color: #7ee0f6;
+}
+
+.cardAnime:hover {
+    transform: translate(2px, 1px);
+}
